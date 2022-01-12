@@ -1,3 +1,7 @@
-body {
-  background: orange;
+.heading {
+  text-align: center;
+}
+
+.text {
+  text-align: center;
 }
