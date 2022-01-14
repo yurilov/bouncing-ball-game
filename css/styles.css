@@ -1,13 +1,9 @@
 body {
   background-color:#c3c3c3;
+  text-align: center;
+
 }
 
 .heading {
-  text-align: center;
   color: #4c6ebb;
-
-}
-
-.text {
-  text-align: center;
 }
