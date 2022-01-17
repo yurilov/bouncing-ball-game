@@ -25,7 +25,7 @@ window.onload = function () {
     context.fillStyle = 'red';
     context.fill();
     context.font = '25px Arial';
-    context.fillStyle = 'black';
+    context.fillStyle = 'white';
     context.fillText('Count: ' + count, 20, 30);
   });
 };
