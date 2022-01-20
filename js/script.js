@@ -18,9 +18,9 @@ window.onload = function () {
       y -= 25;
     }
 
-    draw();
+    
 
-    function draw() ​{
+    function draw(){
 
       ​context.clearRect(0, 0, 600, 400);
 
@@ -33,9 +33,10 @@ window.onload = function () {
       ​context.fillStyle = 'white';
       ​context.fillText("Count: " + count, 20, 30);
 
-      ​window.requestAnimationFrame(draw);
     }
-    
+
+    ​window.requestAnimationFrame(draw);
+ 
   };
 };
 
