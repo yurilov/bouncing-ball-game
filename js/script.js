@@ -10,7 +10,7 @@ window.onload = function () {
   context.fillStyle = 'red';
   context.fill();
   context.stroke();
-  jumpRef.addEventListener('click', () => {
+  jumpRef.onclick = function() {
     count += 1;
     if (y <= 0) {
       y = 425;
@@ -36,6 +36,6 @@ window.onload = function () {
       ​window.requestAnimationFrame(draw);
     }
     
-  });
+  };
 };
 
