@@ -1,11 +1,11 @@
 window.onload = function () {
   const jumpRef = document.querySelector('#jump');
-  var count = 1;
+  let count = 1;
 
   const canvas = document.getElementById('canvas');
   const context = canvas.getContext('2d');
-  var x = 300;
-  var y = 350;
+  let x = 300;
+  let y = 350;
   context.arc(x, y, 50, 0, 2 * Math.PI);
   context.fillStyle = 'red';
   context.fill();
