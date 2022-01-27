@@ -3,55 +3,48 @@ window.onload = function () {
   let t = Date.now();
   let speed = 25;
 
-
-  const canvas = document.getElementById('canvas');
-  const context = canvas.getContext('2d');
+  const canvas = document.getElementById("canvas");
+  const context = canvas.getContext("2d");
   let x = 300;
   let y = 350;
   context.arc(x, y, 50, 0, 2 * Math.PI);
-  context.fillStyle = 'red';
+  context.fillStyle = "red";
   context.fill();
   context.stroke();
-  window.addEventListener('keydown', ballMoveHandler);
-  window.addEventListener('touchstart', ballMoveHandler);
+  window.addEventListener("keydown", ballMoveHandler);
+  window.addEventListener("touchstart", ballMoveHandler);
 
-  function ballMoveHandler() {
+  function ballMoveHandler(e) {
+    e.preventDefault;
+
     count += 1;
-    if (y <= 0) {
-      y = 425;
-    } else {
-      y -= 25;
-    }
 
-    
+    y -= 25;
 
-    function draw(){
+    function draw() {
+      context.clearRect(0, 0, 600, 400);
 
-      ​context.clearRect(0, 0, 600, 400);
+      context.beginPath();
+      context.arc(x, y, 50, 0, 2 * Math.PI);
+      context.fillStyle = "red";
+      context.fill();
 
-      ​context.beginPath();
-      ​context.arc(x, y, 50, 0, 2 * Math.PI);
-      ​context.fillStyle="red";
-      ​context.fill();
-
-      ​context.font = '25px Arial';
-      ​context.fillStyle = 'white';
-      ​context.fillText("Count: " + count, 20, 30);
+      context.font = "25px Arial";
+      context.fillStyle = "white";
+      context.fillText("Count: " + count, 20, 30);
       let timePassed = (Date.now() - t) / 1000;
-      t = Date.now(); 
-      if(y <= 350) {
+      t = Date.now();
+      if (y <= 350) {
         speed += 50 * timePassed;
-        y += speed*timePassed;
-        }
-        if(y > 350) {
-  count = 0;
-}       
+        y += speed * timePassed;
+      }
+      if (y > 350) {
+        count = 0;
+      }
 
+      window.requestAnimationFrame(draw);
     }
 
-    ​window.requestAnimationFrame(draw);
-
-    
+    draw();
   }
-  
 };
